@@ -56,6 +56,8 @@ Plugin 'tmhedberg/SimpylFold'
 
 Plugin 'morhetz/gruvbox'
 
+Plugin 'rakr/vim-one'
+
 Plugin 'preservim/tagbar'
 
 Plugin 'rafi/awesome-vim-colorschemes'
@@ -93,10 +95,25 @@ let NERDTreeShowHidden=1
 
 " set background=dark
 " colorscheme molokayo
-set t_Co=256   " This is may or may not needed.
+" set t_Co=256   " This is may or may not needed.
 
+" set background=dark
+" colorscheme PaperColor
+
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+if (empty($TMUX))
+  if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+
+let t:is_transparent = 1
+let g:airline_theme='one'
+colorscheme one
 set background=dark
-colorscheme PaperColor
 
 nmap <F8> :TagbarToggle<CR>
 autocmd FileType python,c,cpp,go TagbarOpen
@@ -191,12 +208,12 @@ nmap <silent> gr <Plug>(coc-references)
 
 autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
 autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
-set tabstop=4       " The width of a TAB is set to 4.
+set tabstop=2       " The width of a TAB is set to 4.
                     " Still it is a \t. It is just that
                     " Vim will interpret it to be having
                     " a width of 4.
-set shiftwidth=4    " Indents will have a width of 4
-set softtabstop=4   " Sets the number of columns for a TAB
+set shiftwidth=2    " Indents will have a width of 4
+set softtabstop=2   " Sets the number of columns for a TAB
 set expandtab       " Expand TABs to spaces
 
 let g:coc_global_extensions = [
