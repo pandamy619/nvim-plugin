@@ -75,7 +75,7 @@ Plugin 'peitalin/vim-jsx-typescript'
 Plugin 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
 Plugin 'jparise/vim-graphql'        " GraphQL syntax
 Plugin 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+Plugin 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
 " golang
 Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
