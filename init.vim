@@ -6,8 +6,6 @@ let g:python3_host_prog = 'python3'
 " set the runtime path to include Plug and initialize
 call plug#begin('~/.config/nvim/pluged')
 
-" let Vundle manage Vundle, required
-" Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
