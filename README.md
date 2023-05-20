@@ -17,7 +17,7 @@ path: `~/.config/nvim/init.vim`
 
 create folders `.config` and `nvim`
 
-`git clone git@github.com:pandamy619/nvim-plugin.git` to `~/.config/nvim/`\
+`git clone git@github.com:pandamy619/nvim-plugin.git` to `~/.config/nvim/`
 
 copy plugin file: `cp nvim-plugin/init.vim ./init.vim`
 
