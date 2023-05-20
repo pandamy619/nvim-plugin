@@ -17,13 +17,13 @@ path: `~/.config/nvim/init.vim`
 
 create folders `.config` and `nvim`
 
-`git clone [git@github.com](mailto:git@github.com):pandamy619/nvim-plugin.git` to `~/.config/nvim/`\
+`git clone git@github.com:pandamy619/nvim-plugin.git` to `~/.config/nvim/`\
 
 copy plugin file: `cp nvim-plugin/init.vim ./init.vim`
 
 delete clone directory: `rm -rf nvim-plugin`
 
-install the vim-plug plugin manager: `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs [https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim](https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim)`
+install the vim-plug plugin manager: `curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim`
 
 install nvim plugins: 
 ```bash
