@@ -1,85 +1,85 @@
 set nocompatible             " be iMproved, required
 filetype off                 " required
 
-let g:python3_host_prog = 'python3'
+let g:python3_host_prog = 'C:\Users\vladi\AppData\Local\Programs\Python\Python38\python'
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+call plug#begin('~/AppData/local/nvim/pluged')
 
 " let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " pugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'
 " Git plugin not hosted on GitHub
-Plugin 'git://git.wincent.com/command-t.git'
+Plug 'git://git.wincent.com/command-t.git'
 " The sparkup vim script is in a subdirectory of this repo called vim.
 " Pass the path to set the runtimepath properly.
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
 " Install L9 and avoid a Naming conflict if you've already installed a
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
 " All of our Plugins must be added before the following line
-Plugin 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
-Plugin 'deoplete-plugins/deoplete-jedi'
+Plug 'deoplete-plugins/deoplete-jedi'
 
-Plugin 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline'
 
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline-themes'
 
-Plugin 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
-Plugin 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'
 
-Plugin 'ncm2/ncm2'
-Plugin 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2'
+Plug 'roxma/nvim-yarp'
 " Fast python completion (use ncm2 if you want type info or snippet support)
-Plugin 'HansPinckaers/ncm2-jedi'
+Plug 'HansPinckaers/ncm2-jedi'
 " Words in buffer completion
-Plugin 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-bufword'
 " Filepath completion
-Plugin 'ncm2/ncm2-path'
+Plug 'ncm2/ncm2-path'
 
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
-Plugin 'tmhedberg/SimpylFold'
+Plug 'tmhedberg/SimpylFold'
 
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
-Plugin 'rakr/vim-one'
+Plug 'rakr/vim-one'
 
-Plugin 'preservim/tagbar'
+Plug 'preservim/tagbar'
 
-Plugin 'rafi/awesome-vim-colorschemes'
-Plugin 'NLKNguyen/papercolor-theme'
+Plug 'rafi/awesome-vim-colorschemes'
+Plug 'NLKNguyen/papercolor-theme'
 
-Plugin 'junegunn/fzf.vim'
-Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
-Plugin 'liuchengxu/vista.vim'
+Plug 'liuchengxu/vista.vim'
 
 " front
-Plugin 'pangloss/vim-javascript'    " JavaScript support
-Plugin 'leafgarland/typescript-vim' " TypeScript syntax
-Plugin 'peitalin/vim-jsx-typescript'
-Plugin 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
-Plugin 'jparise/vim-graphql'        " GraphQL syntax
-Plugin 'styled-components/vim-styled-components', { 'branch': 'main' }
-Plugin 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
+Plug 'pangloss/vim-javascript'    " JavaScript support
+Plug 'leafgarland/typescript-vim' " TypeScript syntax
+Plug 'peitalin/vim-jsx-typescript'
+Plug 'maxmellon/vim-jsx-pretty'   " JS and JSX syntax
+Plug 'jparise/vim-graphql'        " GraphQL syntax
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'neoclide/coc.nvim', {'branch': 'release', 'do': 'yarn install --frozen-lockfile'}
 
 " golang
-Plugin 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-call vundle#end()
+Plug 'fatih/vim-go', { 'do': ':GoInstallBinaries' }
+call plug#end()
 
 syntax on
 filetype plugin indent on    " required
@@ -93,12 +93,15 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 au VimEnter *  NERDTree
 let NERDTreeShowHidden=1
 
-" set background=dark
+set background=dark
 " colorscheme molokayo
 " set t_Co=256   " This is may or may not needed.
 
-" set background=dark
-" colorscheme PaperColor
+" colorscheme one
+
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 if (empty($TMUX))
@@ -107,13 +110,11 @@ if (empty($TMUX))
   endif
   if (has("termguicolors"))
     set termguicolors
-  endif
+ endif
 endif
 
 let t:is_transparent = 1
 let g:airline_theme='one'
-colorscheme one
-set background=dark
 
 nmap <F8> :TagbarToggle<CR>
 autocmd FileType python,c,cpp,go TagbarOpen
@@ -169,7 +170,7 @@ autocmd FileType go nmap <leader>t  <Plug>(go-test)
 au filetype go inoremap <buffer> . .<C-x><C-o>
 
 function! NearestMethodOrFunction() abort
-  return get(b:, 'vista_nearest_method_or_function', '')
+return get(b:, 'vista_nearest_method_or_function', '')
 endfunction
 
 set statusline+=%{NearestMethodOrFunction()}
