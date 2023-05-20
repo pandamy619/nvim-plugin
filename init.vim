@@ -1,11 +1,10 @@
 set nocompatible             " be iMproved, required
 filetype off                 " required
 
-let g:python3_host_prog = 'C:\Users\vladi\AppData\Local\Programs\Python\Python38\python'
-
+let g:python3_host_prog = 'python3'
 " set the runtime path to include Vundle and initialize
 " set rtp+=~/.vim/bundle/Vundle.vim
-call plug#begin('~/AppData/local/nvim/pluged')
+call vundle#begin()
 
 " let Vundle manage Vundle, required
 " Plugin 'VundleVim/Vundle.vim'
