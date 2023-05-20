@@ -2,9 +2,9 @@ set nocompatible             " be iMproved, required
 filetype off                 " required
 
 let g:python3_host_prog = 'python3'
-" set the runtime path to include Vundle and initialize
-" set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+
+" set the runtime path to include Plug and initialize
+call plug#begin('~/.config/nvim/pluged')
 
 " let Vundle manage Vundle, required
 " Plugin 'VundleVim/Vundle.vim'
